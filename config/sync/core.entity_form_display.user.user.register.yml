@@ -20,6 +20,7 @@ dependencies:
     - field.field.user.user.field_local_representative
     - field.field.user.user.field_mentorship_status
     - field.field.user.user.field_projects
+    - field.field.user.user.field_skills
     - field.field.user.user.field_twitter
     - field.field.user.user.field_user_picture
     - field.field.user.user.field_website
@@ -224,6 +225,7 @@ hidden:
   field_address: true
   field_current_job: true
   field_geolocation: true
+  field_skills: true
   langcode: true
   language: true
   path: true

@@ -19,6 +19,7 @@ dependencies:
     - field.field.user.user.field_local_representative
     - field.field.user.user.field_mentorship_status
     - field.field.user.user.field_projects
+    - field.field.user.user.field_skills
     - field.field.user.user.field_twitter
     - field.field.user.user.field_user_picture
     - field.field.user.user.field_website
@@ -28,6 +29,7 @@ dependencies:
     - entity_reference_revisions
     - fences
     - languagefield
+    - options
     - user
 third_party_settings:
   ds:
@@ -81,10 +83,12 @@ third_party_settings:
         - eit_digital_summer_school_profiles
         - eit_digital_employee_profiles
       right:
+        - field_skills
         - field_expertise
         - field_local_representative
         - field_languages
         - field_address
+        - field_skill_set
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -211,6 +215,13 @@ content:
       link: ''
     third_party_settings: {  }
     region: left
+  field_skills:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: right
 hidden:
   field_current_job: true
   field_current_professional_statu: true

@@ -20,6 +20,7 @@ dependencies:
     - field.field.user.user.field_local_representative
     - field.field.user.user.field_mentorship_status
     - field.field.user.user.field_projects
+    - field.field.user.user.field_skills
     - field.field.user.user.field_twitter
     - field.field.user.user.field_user_picture
     - field.field.user.user.field_website
@@ -55,6 +56,7 @@ hidden:
   field_local_representative: true
   field_mentorship_status: true
   field_projects: true
+  field_skills: true
   field_twitter: true
   field_user_picture: true
   field_website: true
