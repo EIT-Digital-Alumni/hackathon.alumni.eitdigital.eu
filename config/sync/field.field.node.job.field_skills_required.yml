@@ -1,0 +1,29 @@
+uuid: 456b8e43-1a23-42bb-bb1f-88b43b2b6bb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills_required
+    - node.type.job
+    - taxonomy.vocabulary.tech
+id: node.job.field_skills_required
+field_name: field_skills_required
+entity_type: node
+bundle: job
+label: 'Skills Required'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tech: tech
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

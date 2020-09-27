@@ -1,8 +1,9 @@
-uuid: 991b250f-45bb-4911-81fa-13b4b29697e5
+uuid: e6de8103-65fb-423d-8995-def2c774407a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.job.body
     - field.field.node.job.field_apply_link
     - field.field.node.job.field_company
@@ -70,6 +71,7 @@ third_party_settings:
     regions:
       top:
         - field_job_description
+        - field_type
         - field_skills_required
       left:
         - field_company
@@ -80,10 +82,10 @@ third_party_settings:
       bottom:
         - field_apply_link
         - field_more_details_link
-id: node.job.default
+id: node.job.full
 targetEntityType: node
 bundle: job
-mode: default
+mode: full
 content:
   field_apply_link:
     weight: 4
@@ -155,12 +157,12 @@ content:
     type: entity_reference_label
     region: top
   field_type:
-    weight: 7
+    type: list_key
+    weight: 1
+    region: top
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
 hidden:
   body: true
   langcode: true

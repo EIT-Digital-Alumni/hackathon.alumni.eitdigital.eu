@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.job.field_job_description
     - field.field.node.job.field_job_location
     - field.field.node.job.field_more_details_link
+    - field.field.node.job.field_skills_required
+    - field.field.node.job.field_type
     - node.type.job
   module:
     - text
@@ -40,4 +42,6 @@ hidden:
   field_job_description: true
   field_job_location: true
   field_more_details_link: true
+  field_skills_required: true
+  field_type: true
   langcode: true

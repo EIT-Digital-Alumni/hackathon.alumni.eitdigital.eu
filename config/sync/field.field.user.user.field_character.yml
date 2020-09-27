@@ -21,17 +21,7 @@ third_party_settings:
       alumni_member_master: 0
       alumni_member_phd: 0
       friend_member: 0
-    user_additional_register_form_required:
-      authenticated: 0
-      potential_member_master: 0
-      potential_member_phd: 0
-      potential_member_employee: 0
-      alumni_member_employee: 0
-      associate_member_summer_school: 0
-      associate_member_professional_school: 0
-      alumni_member_master: 0
-      alumni_member_phd: 0
-      friend_member: 0
+    user_additional_register_form_required: null
 id: user.user.field_character
 field_name: field_character
 entity_type: user
@@ -51,5 +41,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: alumni_group_type
 field_type: entity_reference

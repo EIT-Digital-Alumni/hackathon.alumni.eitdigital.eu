@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.job.field_job_description
     - field.field.node.job.field_job_location
     - field.field.node.job.field_more_details_link
+    - field.field.node.job.field_skills_required
+    - field.field.node.job.field_type
     - node.type.job
   module:
     - datetime
@@ -72,6 +74,22 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_skills_required:
+    weight: 51
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_type:
+    weight: 52
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select

@@ -7,11 +7,13 @@ dependencies:
     - field.storage.node.field_job_location
     - node.type.job
     - system.menu.main
+    - taxonomy.vocabulary.tech
     - user.role.authenticated
   module:
     - better_exposed_filters
     - datetime
     - node
+    - taxonomy
     - text
     - user
 id: jobs_homepage
@@ -619,6 +621,66 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
+        field_skills_required_target_id:
+          id: field_skills_required_target_id
+          table: node__field_skills_required
+          field: field_skills_required_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_skills_required_target_id_op
+            label: 'Skills Required'
+            description: ''
+            use_operator: false
+            operator: field_skills_required_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_skills_required_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              potential_member_master: '0'
+              potential_member_phd: '0'
+              potential_member_employee: '0'
+              associate_member_master: '0'
+              associate_member_phd: '0'
+              alumni_member_employee: '0'
+              associate_member_summer_school: '0'
+              associate_member_professional_school: '0'
+              alumni_member_master: '0'
+              alumni_member_phd: '0'
+              friend_member: '0'
+              board_member: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: tech
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         field_expiration_date_value:
           id: field_expiration_date_value
@@ -659,6 +721,7 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
+        - user
         - 'user.node_grants:view'
         - user.roles
       tags:
@@ -689,6 +752,7 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
+        - user
         - 'user.node_grants:view'
         - user.roles
       tags:
