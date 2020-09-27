@@ -13,6 +13,7 @@ dependencies:
     - better_exposed_filters
     - datetime
     - node
+    - options
     - taxonomy
     - text
     - user
@@ -82,19 +83,30 @@ display:
               title:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
               field_company_value:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
               field_job_location_value:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_skills_required_target_id:
+                plugin_id: default
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_type_value:
+                plugin_id: default
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
       pager:
@@ -577,7 +589,7 @@ display:
           operator: contains
           value: ''
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: field_job_location_value_op
             label: 'Job Location'
@@ -681,6 +693,62 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
+        field_type_value:
+          id: field_type_value
+          table: node__field_type
+          field: field_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            Full-Time: Full-Time
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_type_value_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_type_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_type_value
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              potential_member_master: '0'
+              potential_member_phd: '0'
+              potential_member_employee: '0'
+              associate_member_master: '0'
+              associate_member_phd: '0'
+              alumni_member_employee: '0'
+              associate_member_summer_school: '0'
+              associate_member_professional_school: '0'
+              alumni_member_master: '0'
+              alumni_member_phd: '0'
+              friend_member: '0'
+              board_member: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          plugin_id: list_field
       sorts:
         field_expiration_date_value:
           id: field_expiration_date_value
