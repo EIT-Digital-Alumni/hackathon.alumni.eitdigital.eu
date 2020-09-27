@@ -8,6 +8,7 @@ dependencies:
     - field.storage.user.field_first_name
     - field.storage.user.field_last_name
     - field.storage.user.field_user_picture
+    - taxonomy.vocabulary.tech
     - user.role.alumni_member_employee
     - user.role.alumni_member_master
     - user.role.alumni_member_phd
@@ -23,9 +24,9 @@ dependencies:
   module:
     - address
     - better_exposed_filters
-    - options
     - profile
     - svg_image
+    - taxonomy
     - user
 id: all_users
 label: 'All Users'
@@ -738,10 +739,10 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: string
-        field_skills_value:
-          id: field_skills_value
-          table: user__field_skills
-          field: field_skills_value
+        field_character_target_id:
+          id: field_character_target_id
+          table: user__field_character
+          field: field_character_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -750,17 +751,17 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_skills_value_op
+            operator_id: field_character_target_id_op
             label: Skills
             description: ''
             use_operator: false
-            operator: field_skills_value_op
+            operator: field_character_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_skills_value
+            identifier: field_character_target_id
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -791,8 +792,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
+          reduce_duplicates: true
+          type: textfield
+          limit: true
+          vid: tech
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         field_first_name_value:
           id: field_first_name_value
@@ -834,6 +840,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.roles
       tags:
         - 'config:field.storage.user.field_address'
@@ -856,6 +863,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.roles
       tags:
         - 'config:field.storage.user.field_address'

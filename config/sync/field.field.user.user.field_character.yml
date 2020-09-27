@@ -1,12 +1,12 @@
-uuid: 9c598f92-5c9b-4449-9e80-c803bb680577
+uuid: 9a404b05-538d-4c2f-87b4-1734b6ee3d3c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_skills
+    - field.storage.user.field_character
+    - taxonomy.vocabulary.tech
   module:
     - multiple_registration
-    - options
     - user
 third_party_settings:
   multiple_registration:
@@ -32,8 +32,8 @@ third_party_settings:
       alumni_member_master: 0
       alumni_member_phd: 0
       friend_member: 0
-id: user.user.field_skills
-field_name: field_skills
+id: user.user.field_character
+field_name: field_character
 entity_type: user
 bundle: user
 label: Skills
@@ -42,5 +42,14 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tech: tech
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_about_me
     - field.field.user.user.field_address
+    - field.field.user.user.field_character
     - field.field.user.user.field_current_job
     - field.field.user.user.field_current_professional_statu
     - field.field.user.user.field_education
@@ -19,7 +20,6 @@ dependencies:
     - field.field.user.user.field_local_representative
     - field.field.user.user.field_mentorship_status
     - field.field.user.user.field_projects
-    - field.field.user.user.field_skills
     - field.field.user.user.field_twitter
     - field.field.user.user.field_user_picture
     - field.field.user.user.field_website
@@ -29,7 +29,6 @@ dependencies:
     - entity_reference_revisions
     - fences
     - languagefield
-    - options
     - user
 third_party_settings:
   ds:
@@ -83,12 +82,12 @@ third_party_settings:
         - eit_digital_summer_school_profiles
         - eit_digital_employee_profiles
       right:
+        - field_character
         - field_skills
         - field_expertise
         - field_local_representative
         - field_languages
         - field_address
-        - field_skill_set
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -158,11 +157,19 @@ content:
     type: basic_string
     region: left
   field_address:
-    weight: 12
+    weight: 14
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: address_default
+    region: right
+  field_character:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: right
   field_education:
     type: entity_reference_revisions_entity_view
@@ -174,7 +181,7 @@ content:
     third_party_settings: {  }
     region: left
   field_expertise:
-    weight: 9
+    weight: 11
     label: above
     settings:
       link_to_entity: false
@@ -183,7 +190,7 @@ content:
     region: right
   field_languages:
     type: languagefield_default
-    weight: 11
+    weight: 13
     region: right
     label: above
     settings:
@@ -192,7 +199,7 @@ content:
         name: name
     third_party_settings: {  }
   field_local_representative:
-    weight: 10
+    weight: 12
     label: above
     settings:
       link: false
@@ -215,13 +222,6 @@ content:
       link: ''
     third_party_settings: {  }
     region: left
-  field_skills:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: right
 hidden:
   field_current_job: true
   field_current_professional_statu: true

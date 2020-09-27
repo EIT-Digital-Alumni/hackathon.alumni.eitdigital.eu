@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_about_me
     - field.field.user.user.field_address
+    - field.field.user.user.field_character
     - field.field.user.user.field_current_job
     - field.field.user.user.field_current_professional_statu
     - field.field.user.user.field_education
@@ -19,7 +20,6 @@ dependencies:
     - field.field.user.user.field_local_representative
     - field.field.user.user.field_mentorship_status
     - field.field.user.user.field_projects
-    - field.field.user.user.field_skills
     - field.field.user.user.field_twitter
     - field.field.user.user.field_user_picture
     - field.field.user.user.field_website
@@ -59,6 +59,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: address_default
+    region: content
+  field_character:
+    weight: 24
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_current_job:
     weight: 9
@@ -698,12 +708,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_skills:
-    weight: 23
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_twitter:
     weight: 15
